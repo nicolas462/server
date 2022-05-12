@@ -47,7 +47,7 @@ def get_poll_data():
                 t.start()
             return 'Request processed successfully.', 201
     except Exception as e:
-        return e, 402
+        return str(e), 402
     else:
         return 'The class session has already ended.', 401
 
