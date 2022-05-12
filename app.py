@@ -58,4 +58,4 @@ def asyncSendingPoll(poll, historicClassSessionId, idStudent, schedulePoll, endT
         Puntuation.addPuntution(historicClassSessionId, responses, idStudent)
 
 if __name__ == '__main__':
-     app.run()
+     app.run(debug=True)

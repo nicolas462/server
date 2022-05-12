@@ -1,4 +1,1 @@
-web: gunicorn app:app
-
-NUM_WORKERS=3
-TIMEOUT=120
+web: gunicorn workers=3 app:app --timeout 200
