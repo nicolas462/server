@@ -5,5 +5,5 @@ def getWhatsappNumberById(idStudent):
   mycursor.execute(f"SELECT WHATSAPP_NUMBER FROM STUDENT WHERE ID_STUDENT={idStudent}")
   res = f"57{mycursor.fetchone()[0]}"
   mycursor.close()
-  Database.mydb.close()    
+  #Database.mydb.close()    
   return res
