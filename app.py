@@ -7,6 +7,7 @@ from pytz import timezone
 from datetime import datetime
 from flask import Flask, request, jsonify
 import threading
+import sys
 
 app = Flask(__name__)
 tz = pytz.timezone('America/Bogota')
@@ -46,8 +47,9 @@ def get_poll_data():
                 threads.append(t)
                 t.start()
             return 'Request processed successfully.', 201
-    except Exception as e:
-        return str(e), 402
+    except IOError:
+        type, value, traceback = sys.exc_info()
+        return ('Error opening %s: %s' % (value.filename, value.strerror)), 402
     else:
         return 'The class session has already ended.', 401
 
