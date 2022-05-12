@@ -16,8 +16,13 @@ class HistoricClassSession:
     val = (self.id, idClassSession, date)
     mycursor.execute(sql, val)
     Database.mydb.commit()
+    mycursor.close()
+    Database.mydb.close()
 
   def findLastIdRegistred(self) -> int:
     mycursor = Database.mydb.cursor()
     mycursor.execute(f"SELECT MAX(ID_HISTORIC_CLASS_SESSION) FROM HISTORIC_CLASS_SESSION")
-    return mycursor.fetchone()[0]
+    res = mycursor.fetchone()[0]
+    mycursor.close()
+    Database.mydb.close()
+    return res
