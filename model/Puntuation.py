@@ -12,3 +12,5 @@ def addPuntution(idHistoricClassSession, responses, idStudent):
   val = (idHistoricClassSession, responses[0], responses[1], responses[2], idStudent)
   mycursor.execute(sql, val)
   Database.mydb.commit()
+  mycursor.close()
+  Database.mydb.close()  
