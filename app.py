@@ -34,7 +34,7 @@ def get_poll_data():
         if endTimeClass.time() > currentDate.time() or not(schedulePoll):
             #create historic class session
             hCS = HistoricClassSession()
-            hCS.addHistoricClassSession(idClassSession[0], (f"{currentDate.year}-{currentDate.day}-{currentDate.day}"))
+            hCS.addHistoricClassSession(idClassSession[0], (f"{currentDate.year}-{currentDate.month}-{currentDate.day}"))
             #get response
             professorName = Professor.findProfessorNameByNrc(class_nrc)
             matter = Class.getClassNameByNrc(class_nrc)
